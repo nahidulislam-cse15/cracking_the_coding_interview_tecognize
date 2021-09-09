@@ -101,6 +101,18 @@ class LinkedList:
         prev=l1.next
         prev.next = l1
         l1.next=None
+     def deleteDuplicates(self, head):
+        if not head:
+            return head
+        prev=head
+        run=head.next
+        while run:
+            if(prev.val!=run.val):
+                prev.next=run
+                prev=prev.next
+            run=run.next
+        prev.next=None
+        return head
 
             
 
